@@ -2,7 +2,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [6.0.1] - 2019-28-11
+
+### Changed
+
+- Examples support `react@16.x.x`
+- Allow custom colors to be passed in through prop.data-color so tests pass w/o warnings.
+- LaddaButton.shouldComponentUpdate() now returns bool instead of undefined.
+
 ## [6.0.0] - 2018-02-10
+
 ### Changed
 - Support `react@16.x.x`
 
