@@ -1,6 +1,6 @@
 {
   "name": "react-ladda",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "React wrapper for Ladda buttons",
   "main": "dist/index.js",
   "scripts": {
