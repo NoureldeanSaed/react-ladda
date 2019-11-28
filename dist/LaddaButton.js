@@ -98,8 +98,12 @@ var LaddaButton = function (_Component) {
     }
   }, {
     key: 'shouldComponentUpdate',
-    value: function shouldComponentUpdate(nextProps) {
+    value: function shouldComponentUpdate(nextProps, nextState) {
       this.updateLaddaInstance(nextProps);
+      // Silence message:
+      // "Warning: LaddaButton.shouldComponentUpdate(): Returned undefined
+      // instead of a boolean value. Make sure to return true or false."
+      return this.props !== nextProps || this.state !== nextState;
     }
   }, {
     key: 'componentWillUnmount',
@@ -137,7 +141,11 @@ LaddaButton.propTypes = {
 
   // Ladda props
   // eslint-disable-next-line react/no-unused-prop-types
-  'data-color': _propTypes2.default.oneOf(['green', 'red', 'blue', 'purple', 'mint']),
+  'data-color': _propTypes2.default.oneOfType([_propTypes2.default.oneOf(['green', 'red', 'blue', 'purple', 'mint']),
+  // Silence message: 'Warning: Failed prop type: Invalid prop `data-color`
+  // of value `#eee` supplied to `LaddaButton`, expected one of ["green",
+  // "red","blue","purple","mint"].'
+  _propTypes2.default.string]),
   // eslint-disable-next-line react/no-unused-prop-types
   'data-size': _propTypes2.default.oneOf(_constants.SIZES),
   // eslint-disable-next-line react/no-unused-prop-types
