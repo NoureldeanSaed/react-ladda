@@ -65,8 +65,12 @@ class LaddaButton extends Component {
     }
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps, nextState) {
     this.updateLaddaInstance(nextProps)
+    // Silence message:
+    // "Warning: LaddaButton.shouldComponentUpdate(): Returned undefined
+    // instead of a boolean value. Make sure to return true or false."
+    return ((this.props !== nextProps) || (this.state !== nextState))
   }
 
   componentWillUnmount() {
