@@ -11,8 +11,8 @@ import LaddaButton, {
   SLIDE_UP,
   SLIDE_DOWN,
   ZOOM_IN,
-  ZOOM_OUT
-} from 'react-ladda'
+  ZOOM_OUT,
+} from 'dist'
 
 import './demo.css'
 
@@ -33,10 +33,19 @@ class App extends Component {
   }
 
   toggle(name) {
+    const active = !this.state[name];
     this.setState({
-      [name]: !this.state[name],
+      [name]: active,
       progress: 0.5,
     })
+
+    setTimeout(() => {
+      this.setState({
+        [name]: !active,
+        progress: 0.5,
+      })
+    }, 1000);
+
   }
 
   render() {
@@ -50,6 +59,9 @@ class App extends Component {
             it gives users immediate feedback upon submit rather than leaving them wondering
             while the browser does its thing. For a
             real-world example, check out any of the forms on <a href="http://slides.com">slides.com</a>.
+          </p>
+          <p>
+            <strong>NOTE</strong>: all buttons revert to their inactive state after 1 second.
           </p>
           <section className="button-demo">
             <h3>expand-left</h3>

@@ -1,14 +1,13 @@
 {
   "name": "example",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.6.1"
+    "react-scripts": "^2.0.0"
   },
   "dependencies": {
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-ladda": "^5.0.3"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
