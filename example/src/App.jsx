@@ -11,8 +11,8 @@ import LaddaButton, {
   SLIDE_UP,
   SLIDE_DOWN,
   ZOOM_IN,
-  ZOOM_OUT
-} from 'react-ladda'
+  ZOOM_OUT,
+} from 'dist'
 
 import './demo.css'
 
